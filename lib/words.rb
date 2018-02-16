@@ -8,15 +8,23 @@ class Words
   end
 
   def save()
-    @dictionary.push(self)
+    @@dictionary.push(self)
   end
 
   def self.all()
-    @@list
+    @@dictionary
   end
 
   def self.clear()
-    @@list = []
+    @@dictionary = []
+  end
+
+  def self.find(word)
+    @@dictionary.each do |item|
+      if item.word == word
+        return item
+      end
+    end
   end
 
 end
