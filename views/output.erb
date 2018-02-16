@@ -1,4 +1,10 @@
-<h1>List of all words </h1>
-<% @dictionary.each do |word| %>
-  <h4><a href="/contacts/<%= word.word %>"><%= word.word %></a></h4>
-<% end %>
+<% @dictionary.each_key do |key| %>
+  <div class="well">
+    <h2 class="well_label"><%=key%></h2>
+    <ul>
+      <% @dictionary[key].each do |word| %>
+        <li><a href="output/<%= word.word %>"><%= word.word %></a></li>
+      <%end%>
+    </ul>
+  </div>
+<%end%>

@@ -9,9 +9,13 @@ get('/') do
 end
 
 post('/output') do
-  binding.pry
   word = Words.new(params)
   word.save
   @dictionary = Words.all()
   erb(:output)
+end
+
+get('/words/:word') do
+  @word = Words.find(params[:word])
+  erb(:word)
 end

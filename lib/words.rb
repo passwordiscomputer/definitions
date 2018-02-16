@@ -1,5 +1,5 @@
 class Words
-  @@dictionary = []
+  @@dictionary = {}
   attr_accessor :word, :definition, :example
   def initialize(attributes)
     @word = attributes.fetch(:word)
@@ -8,7 +8,11 @@ class Words
   end
 
   def save()
-    @@dictionary.push(self)
+    if @@dictionary.key?(self.word[0].downcase)
+      @@dictionary[word[0].downcase].push(self)
+    else
+      @@dictionary.merge!(word[0].downcase=>[self])
+    end
   end
 
   def self.all()
@@ -20,7 +24,7 @@ class Words
   end
 
   def self.find(word)
-    @@dictionary.each do |item|
+    @@dictionary[word[0]].each do |item|
       if item.word == word
         return item
       end

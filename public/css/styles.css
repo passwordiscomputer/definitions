@@ -1,0 +1,41 @@
+.jumbotron{
+  font-family: 'Playfair Display',serif;
+  color: Black;
+  background:rgba(255,255,255, 0.5);
+  border-bottom: 1px solid #e3e3e3;
+  padding-left: 19px;
+  margin-bottom: 48px;
+}
+* {
+  border-radius: 0 !important;
+}
+.well{
+  background:rgba(255,255,255, 0.5);
+  margin-left: 7%;
+  margin-right: 7%;
+  padding-top: 0px;
+}
+.well_label{
+  font-family: 'Playfair Display',serif;
+  margin-bottom: 19px;
+}
+
+
+h1{
+  text-align: left;
+  margin: 0px;
+}
+
+body{
+  background-image: url('../img/topography.png');
+}
+form, h4{
+  color: black;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+
+}
+
+.btn-primary{
+  background-color: grey;
+}
