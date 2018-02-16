@@ -1,0 +1,4 @@
+<h1>List of all words </h1>
+<% @dictionary.each do |word| %>
+  <h4><a href="/contacts/<%= word.word %>"><%= word.word %></a></h4>
+<% end %>
