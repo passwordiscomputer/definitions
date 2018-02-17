@@ -1,10 +1,11 @@
 class Words
   @@dictionary = {}
-  attr_accessor :word, :definition, :example
+  attr_accessor :word, :definition, :example, :part_of_speech
   def initialize(attributes)
     @word = attributes.fetch(:word)
     @definition = attributes.fetch(:definition)
     @example = attributes.fetch(:example)
+    @part_of_speech = attributes.fetch(:part_of_speech)
   end
 
   def save()

@@ -15,7 +15,7 @@ post('/output') do
   erb(:output)
 end
 
-get('/words/:word') do
+get('/output/:word') do
   @word = Words.find(params[:word])
   erb(:word)
 end
