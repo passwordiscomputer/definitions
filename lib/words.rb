@@ -1,11 +1,13 @@
 class Words
   @@dictionary = {}
-  attr_accessor :word, :definition, :example, :part_of_speech
+  attr_accessor :word, :definition_list
   def initialize(attributes)
     @word = attributes.fetch(:word)
-    @definition = attributes.fetch(:definition)
-    @example = attributes.fetch(:example)
-    @part_of_speech = attributes.fetch(:part_of_speech)
+    @definition_list = []
+  end
+
+  def add_definition(definition)
+    @definition_list.push(definition)
   end
 
   def save()
@@ -14,6 +16,7 @@ class Words
     else
       @@dictionary.merge!(word[0].downcase=>[self])
     end
+    @@dictionary = Hash[@@dictionary.sort]
   end
 
   def self.all()
@@ -24,8 +27,9 @@ class Words
     @@dictionary = []
   end
 
+
   def self.find(word)
-    @@dictionary[word[0]].each do |item|
+    @@dictionary[word[0].downcase].each do |item|
       if item.word == word
         return item
       end

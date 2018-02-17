@@ -45,6 +45,9 @@ p{
 b{
   font-family: 'Playfair Display', serif;
 }
+#home_link{
+  text-align: center;
+}
 
 .btn-primary{
   background-color: grey;
