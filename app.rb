@@ -19,6 +19,7 @@ end
 
 get('/output/:word') do
   @word = Words.find(params[:word])
+  binding.pry
   @definition_list = @word.definition_list
   erb(:word)
 end
