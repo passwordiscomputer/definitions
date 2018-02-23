@@ -17,15 +17,16 @@ Click on a word to see definition
 
 
 Setup/Installation Requirements
-Word definer is viewable online at some point
+Word definer is viewable online at https://stark-coast-28122.herokuapp.com/
 
 To view the source code:
+https://github.com/passwordiscomputer/definitions
 
 visit
 clone or download
 open index.html in any web browser
 Technologies Used
-sinatra ruby css and html
+sinatra ruby css and html and heroku
 
 License
 This software is licensed under the MIT license.
