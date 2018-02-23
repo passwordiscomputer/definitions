@@ -10,22 +10,27 @@ get('/') do
 end
 
 post('/output') do
-  word = Words.new(params)
+  word = Word.new(params)
   word.save
-  @dictionary = Words.all()
+  @dictionary = Word.all()
 
   erb(:output)
 end
 
+get('/output') do
+  @dictionary = Word.all()
+  erb(:output)
+end
+
 get('/output/:word') do
-  @word = Words.find(params[:word])
-  binding.pry
+  @word = Word.find(params[:word])
+
   @definition_list = @word.definition_list
   erb(:word)
 end
 
 post('/output/:word') do
-  @word = Words.find(params[:word])
+  @word = Word.find(params[:word])
   definition = Definition.new(params)
   @word.add_definition(definition)
   @definition_list = @word.definition_list

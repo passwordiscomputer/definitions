@@ -1,4 +1,4 @@
-class Words
+class Word
   @@dictionary = {}
   attr_accessor :word, :definition_list
   def initialize(attributes)
@@ -24,7 +24,7 @@ class Words
   end
 
   def self.clear()
-    @@dictionary = []
+    @@dictionary = {}
   end
 
 
